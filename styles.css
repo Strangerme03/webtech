@@ -1,0 +1,15 @@
+#p1,#p2{
+    margin-top: 100px;
+    margin-left: 80px;
+    display: block;
+
+}
+
+#dv1{
+    padding-left: 30px;
+    padding-right: 25px;
+    background-color: blue;
+    font-color:red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: none;
+}

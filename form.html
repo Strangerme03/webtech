@@ -1,0 +1,103 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        form{
+            width: 300px;
+            height: 200px;
+            margin: auto;
+            border: 1px solid #000000;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+        label{
+            display: inline-block;
+            width: 80px;
+        }
+        .submit-btn{
+            display: block;
+            width: 80px;
+            margin: auto;
+            text-align: center;
+        }
+        .box{
+            margin: 10px;
+            padding: 5px;
+        }
+        .bux{
+            margin: 10px;
+            padding: 5px;
+        }
+        .country{
+
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form  name="Myform" onsubmit="return Validation()">
+        <div class="box">
+        <label for="username">Username</label>
+            <input type="text" id="username"><br>
+        </div>
+        <div class="bux">
+        <label for="password">Password</label>
+            <input type="password" id="password" required><br>
+        </div>
+        <div class="country">
+        <label for="Country">Country</label>
+            <select id="Country">
+                    <option value="" disabled selected>Select your country</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="India">India</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Korea">Korea</option>
+                    <option value="China">China</option>
+            </select><br>
+        </div>
+        
+
+            <label>Gender</label>
+                <input type="radio" id="male" name="Gender" value="male">
+                <label for="male">M</label>
+                <input type="radio" id="female" name="Gender" value="female">
+                <label for="female">F</label><br>
+
+        <button type="submit" value="Submit" class="submit-btn">Submit</button>
+    </form>
+
+    <script type="text/javascript">
+        function Validation(){
+            var username=document.getElementById("username").value;
+            if(username.length<4){
+                alert("Enter valid username.");
+                return false;
+
+            }
+            var password=document.getElementById("password").value;
+            var passwordPattern = /^[A-Za-z]*#$/; // Starts with letter and ends with #
+            if (!passwordPattern.test(password)) {
+                alert("Password must start with a letter and end with '#'.");
+                return false;
+            }
+            var country=document.getElementById("Country").value;
+            if (country === "") {
+                alert("Select a country.");
+                return false;
+            }
+            
+            var male=document.getElementById("male").checked;
+            var female=document.getElementById("female").checked;
+            if(male==false && female==false){
+                alert("select Gender");
+                return false;
+            }
+             return true;
+            }
+    </script>
+</body>
+</html>

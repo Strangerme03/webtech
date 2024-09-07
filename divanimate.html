@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Animate Example</title>
+    <style>
+        #mydiv {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: #3498db; /* Blue color */
+            border: 1px solid black;
+        }
+        button{
+            padding: 5px;
+            margin: 5px;
+        }
+        
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#b1').click(function(){
+               $('#mydiv').animate({left:'250px'},10000);
+            });
+            $('#b2').click(function(){
+               $('#mydiv').stop();
+            });
+            
+            $('#b3').click(function(){
+               $('#mydiv').fadeOut(1000).fadeIn(1000);
+            });
+
+            $('#b4').click(function(){
+               $('#mydiv').slideUp(1000)
+               .delay(500)
+               .slideDown(1000);
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <button id="b1">Animate</button><br>
+    <button id="b2">Stop</button><br>
+    <button id="b3">Fade</button><br>
+    <button id="b4">toggle me</button>
+</body>
+</html>

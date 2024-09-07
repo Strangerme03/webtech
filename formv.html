@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form Validation</title>
+</head>
+<body>
+    <form id="signupForm" onsubmit="return validateForm()">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" placeholder="Enter your Name" id="name"><br>
+            <label for="email">Email:</label>
+            <input type="email" placeholder="Enter your Email" id="email"><br>
+            <label for="password">Password:</label>
+            <input type="password" placeholder="Enter your Password" id="password"><br>
+            <label for="age">Age:</label>
+            <input type="number" placeholder="Enter your Age" id="age"><br>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var age = document.getElementById("age").value;
+
+            // Validate Name
+            if (!validateName(name)) {
+                alert("Please enter your name.");
+                return false;
+            }
+
+            // Validate Email
+            if (!validateEmail(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            // Validate Password
+            if (!validatePassword(password)) {
+                alert("Password must be at least 6 characters long, start with a letter, and end with a digit.");
+                return false;
+            }
+
+            // Validate Age
+            if (!validateAge(age)) {
+                alert("Age must be between 8 and 60.");
+                return false;
+            }
+
+            // If all validations pass
+            return true;
+        }
+
+        function validateName(name) {
+            return name.trim() !== "";
+        }
+
+        function validateEmail(email) {
+            var re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return re.test(email);
+        }
+
+        function validatePassword(password) {
+            var re = /^[a-zA-Z].{4,}[0-9]$/;
+            return re.test(password);
+        }
+
+        function validateAge(age) {
+            var numAge = parseInt(age, 10);
+            return !isNaN(numAge) && numAge >= 8 && numAge <= 60;
+        }
+    </script>
+</body>
+</html>

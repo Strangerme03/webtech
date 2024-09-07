@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form Validation</title>
+    <style>
+        .hobbies-label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="signupForm" onsubmit="return validateForm()">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username"><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password"><br>
+
+          
+             <label for="hobby">Hobbies:</label><br>
+            <input type="checkbox" class="hobby" value="1">
+            <label for="1">1</label>
+            <input type="checkbox" class="hobby" value="2">
+            <label for="1">1</label>
+            <input type="checkbox" class="hobby" value="3"> 
+            <label for="1">1</label>
+            <input type="checkbox" class="hobby" value="50"> 
+            <label for="1">1</label><br>
+            
+          
+
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var hobbies = document.querySelectorAll('.hobby:checked').length;
+
+            // Validate username
+            if (username.trim()=== "") {
+                alert("Username cannot be empty.");
+                return false; // Prevent form submission
+            }
+
+            var passwordpattern = /^[A-Za-z]+.*[0-9]+$/
+            if(!passwordpattern.test(password)) {
+                alert("Enter paasword with letters and end with #");
+                return false; // Prevent form submission
+            }
+            if (password.length < 5) {
+                alert("Password must be at least 5 characters long.");
+                return false; // Prevent form submission
+            }
+
+            // Validate hobbies
+            if (hobbies === 0) {
+                alert("You must select at least one hobby.");
+                return false; // Prevent form submission
+            }
+
+            // If all validations pass
+            return true;
+        }
+    </script>
+</body>
+</html>

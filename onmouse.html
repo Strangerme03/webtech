@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hover Description</title>
+    <style>
+        #imageContainer {
+            text-align: center;
+            margin-top: 50px;
+        }
+        #description {
+            font-size: 16px;
+            color: #333;
+        }
+        img {
+            width: 200px;
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function changeDescriptionOnMouseOver() {
+            document.getElementById('description').innerHTML= 'You are hovering over the image!';
+        }
+
+        function changeDescriptionOnMouseOut() {
+            document.getElementById('description').innerHTML= 'This is the original description.';
+        }
+    </script>
+</head>
+<body>
+    <div id="imageContainer">
+        <img 
+            src="https://via.placeholder.com/200" 
+            alt="Sample Image" 
+            id="sampleImage"
+            onmouseover="changeDescriptionOnMouseOver()"
+            onmouseout="changeDescriptionOnMouseOut()"
+        />
+        <p id="description">This is the original description.</p>
+    </div>
+</body>
+</html>

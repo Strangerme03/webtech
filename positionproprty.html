@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Property Example</title>
+    <style>
+        .static-box {
+            position: static; /* Default positioning */
+            background-color: lightblue;
+            padding: 10px;
+            border: 1px solid blue;
+        }
+
+        .relative-box {
+            position: relative; /* Positioned relative to its normal position */
+            top: 20px;
+            left: 30px;
+            background-color: lightcoral;
+            padding: 10px;
+            border: 1px solid red;
+        }
+
+        .absolute-box {
+            position: absolute; /* Positioned relative to the nearest positioned ancestor */
+            top: 50px;
+            right: 50px;
+            background-color: lightgreen;
+            padding: 10px;
+            border: 1px solid green;
+        }
+
+        .fixed-box {
+            position: fixed; /* Positioned relative to the viewport */
+            bottom: 10px;
+            left: 10px;
+            background-color: lightgoldenrodyellow;
+            padding: 10px;
+            border: 1px solid gold;
+        }
+
+        .sticky-box {
+            position: sticky; /* Positioned based on scroll position */
+            top: 0; /* Stick to the top of the viewport */
+            background-color: lightpink;
+            padding: 10px;
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="static-box">Static Position</div>
+    <div class="relative-box">Relative Position</div>
+    <div class="absolute-box">Absolute Position</div>
+    <div class="fixed-box">Fixed Position</div>
+    <div class="sticky-box">Sticky Position</div>
+    <div style="height: 1500px;"></div> <!-- Added height for scrolling -->
+</body>
+</html>

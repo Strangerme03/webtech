@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Boxes Example</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function showAlert() {
+            alert("This is an alert box!");
+        }
+
+        function showConfirm() {
+            let result = confirm("Do you want to proceed?");
+            if (result) {
+                alert("You pressed OK.");
+            } else {
+                alert("You pressed Cancel.");
+            }
+        }
+
+        function showPrompt() {
+            let userInput = prompt("Please enter your name:", "Guest");
+            if (userInput !== null) {
+                alert("Hello, " + userInput + "!");
+            } else {
+                alert("No name entered.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="showConfirm()">Show Confirm</button>
+    <button onclick="showPrompt()">Show Prompt</button>
+</body>
+</html>
